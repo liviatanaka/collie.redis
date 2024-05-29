@@ -3,7 +3,7 @@ pipeline {
     environment {
         K8S_PORT = 64606
     }
-    {
+    stages {
         stage('Deploy on k8s') {
             steps {
                 withCredentials([string(credentialsId: 'my_kubernetes', variable: 'api_token')]) {
